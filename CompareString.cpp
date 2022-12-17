@@ -3,15 +3,18 @@
 using namespace std;
 int main(){
     char x[100],y[100];
-    int i,sum=0;
+    int i,sum=0,len;
     cin>>x>>y;
-    for(i=0;i<strlen(x)&&i<strlen(y);i++){
-        if(x[i]==y[i]||x[i]=='?'||y[i]=='?'){
+    len=strlen(x);
+    for(i=0;i<len;i++){
+        if(x[i]!=y[i]){
+            if(x[i]!=63&&y[i]!=63){
            sum=1; 
+           break;
         }
-        
+        }
     }
-        if(sum==1){
+        if(sum==0){
             cout<<"Yes";
         }
         else{
